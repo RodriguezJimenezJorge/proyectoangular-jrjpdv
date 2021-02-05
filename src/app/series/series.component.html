@@ -1,0 +1,37 @@
+<h2>Series</h2>
+<p>Introducir una nueva serie</p>
+<div>
+	<label
+    >Nombre
+    <input #serieNombrey />
+  </label>
+	<br />
+	<br />
+	<label
+    >Visualizaciones
+    <input #serieVisualizaciones />
+  </label>
+	<br />
+	<br />
+	<!-- (click) passes input value to add() and then clears the input -->
+	<button
+    (click)="add(serieNombrey.value, serieVisualizaciones.value); serieNombrey.value=''; serieVisualizaciones.value=''"
+  >
+    Agregar
+  </button>
+	<br />
+	<br />
+</div>
+
+	<ul class="series">
+		<li *ngFor="let serie of series">
+			<a routerLink="/detail/{{serie.id}}">
+				<span class="badge">{{serie.id}}</span> {{serie.nombre}}
+				<span class="visualizaciones">{{serie.visualizaciones}}</span>
+			</a>
+			<!-- Importante el css -->
+			<button class="delete" title="delete serie" (click)="delete(serie)">
+      F
+    </button>
+		</li>
+	</ul>

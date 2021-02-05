@@ -1,0 +1,20 @@
+<div *ngIf="serie != undefined">
+	<h2>{{serie.nombre | uppercase}} detalles</h2>
+	<div><span>id: </span>{{serie.id}}</div>
+	<div>
+		<label
+      >Nombre:
+      <input [(ngModel)]="serie.nombre" placeholder="nombre" />
+    </label>
+		<br />
+		<label
+      >Visualizaciones de la serie:
+      <input #serieVisualizaciones [(ngModel)]="serie.visualizaciones" placeholder="visualizaciones" />
+    </label>
+	</div>
+	<br>
+	<button (click)="goBack()">Volver</button>
+	<br>
+	<br>
+	<button (click)="save(serieVisualizaciones.value)">Guardar</button>
+</div>

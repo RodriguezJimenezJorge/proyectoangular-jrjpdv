@@ -13,6 +13,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "lodash",
+              "highcharts"
+            ],
             "outputPath": "dist/proyectoangular",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -120,5 +124,14 @@
       }
     }
   },
-  "defaultProject": "proyectoangular"
+  "defaultProject": "proyectoangular",
+  "build": {
+    "builder": "@angular-devkit/build-angular:browser",
+    "options": {
+      "allowedCommonJsDependencies": [
+        "lodash",
+        "highcharts"
+      ]
+    }
+  }
 }
